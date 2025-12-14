@@ -1,0 +1,30 @@
+print(f'\n--SwiftFund Agency---')
+print("Welcome! please answer the details below!!! ")
+
+while True:
+     name=input("name:")
+     age=int(input("age:"))
+     status=input("status('employed/business_owner/student'):")
+     income = int(input("Income (Ksh): "))
+
+     if status == "student":
+         income = 0
+     else:
+         income = int(input("Income (Ksh): "))
+
+     print(f"\n--loan application result for, {name}--")
+
+     if age >= 18 and status in ["employed", "business_owner","student"] and income >= 30000:
+         print("Loan Status: APPROVED ")
+         print("Congratulations! You qualify for a loan.")
+     elif age < 20 and status == "student":
+         print("Status: APPROVED (Student Special Case) ")
+
+     else:
+         print("Status: NOT ELIGIBLE ")
+
+     choice=input("\nDo you want to proceed with your application?(yes/no)")
+
+     if choice=="no":
+        print("Thank you for trusting our services,welcome back again!!")
+        break
